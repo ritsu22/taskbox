@@ -6,21 +6,6 @@ export default function Task({
   onArchiveTask,
   onPinTask,
 }) {
-  Task.propTypes = {
-    /** Composition of the task */
-    task: PropTypes.shape({
-      /** Id of the task */
-      id: PropTypes.string.isRequired,
-      /** Title of the task */
-      title: PropTypes.string.isRequired,
-      /** Current state of the task */
-      state: PropTypes.string.isRequired,
-    }),
-    /** Event to change the task to archived */
-    onArchiveTask: PropTypes.func,
-    /** Event to change the task to pinned */
-    onPinTask: PropTypes.func,
-  };
   return (
     <div className={`list-item ${state}`}>
       <label className="checkbox">
@@ -52,3 +37,19 @@ export default function Task({
     </div>
   );
 }
+
+Task.propTypes = {
+  /** Composition of the task */
+  task: PropTypes.shape({
+    /** Id of the task */
+    id: PropTypes.string.isRequired,
+    /** Title of the task */
+    title: PropTypes.string.isRequired,
+    /** Current state of the task */
+    state: PropTypes.string.isRequired,
+  }),
+  /** Event to change the task to archived */
+  onArchiveTask: PropTypes.func,
+  /** Event to change the task to pinned */
+  onPinTask: PropTypes.func,
+};
